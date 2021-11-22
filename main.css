@@ -1,0 +1,13 @@
+body {
+    background-color: lightblue;
+    
+}
+
+table {
+    background-color: blue;
+}
+
+td {
+    background-color: white;
+    border-radius: 50%;
+}
