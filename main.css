@@ -30,4 +30,15 @@ button {
 img {
     height: 60px;
     width: 60px;
+    vertical-align: middle;
+    padding-bottom: 15px;
+}
+
+span {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+button {
+    
 }
