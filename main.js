@@ -26,7 +26,7 @@ function init() {
     null, null, null, null, null, null, null, null, null, null, null, null,
     null, null, null, null, null, null, null, null, null, null, null, null,
     null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null];
+    null, null, null];
     turn = 1;
     render();
 }
@@ -39,9 +39,11 @@ function render() {
 };
 
 function handleMove(evt) {
+    if (evt.target.tagName !== "TD") return;
     const idx = parseInt(evt.target.id.replace('s', ''));
     if (board[idx]) return;
     board[idx] = turn;
     turn *= -1;
     render();
-}
+    console.log(board);
+};

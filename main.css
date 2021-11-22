@@ -16,6 +16,8 @@ td {
     padding: 10px;
     height: 60px;
     width: 60px;
+    background-size: cover;
+    background-position: cover;
 }
 
 button {
