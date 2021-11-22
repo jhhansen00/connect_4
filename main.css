@@ -1,6 +1,9 @@
 body {
     background-color: lightblue;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 table {
@@ -10,4 +13,17 @@ table {
 td {
     background-color: white;
     border-radius: 50%;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+button {
+    padding: 10px;
+    margin: 15px;
+}
+
+img {
+    height: 60px;
+    width: 60px;
 }
