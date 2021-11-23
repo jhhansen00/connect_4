@@ -1,11 +1,15 @@
 /*----- constants -----*/
 const yellowCircle = "https://i.dlpng.com/static/png/4064602-yellow-circle-transparent-background-logo-image-free-logo-png-yellow-circle-png-2000_1902_preview.webp"
-const greenCircle = "https://lh3.googleusercontent.com/proxy/XHr5m53dbY9tLCJv0tZFcN3C8XWWwdPXboA1FIFED06dEM-4Pt8ndBMpaf7E67fmW1yks9LCv7PMMZigbWK5x0AlkDzNlMU7xc0uXU_jJxSXkx4j"
-const lookup = {
+const greenCircle = "https://www.pngkey.com/png/full/417-4174990_how-to-set-use-small-green-dot-icon.png"
+const tokens = {
     "1": yellowCircle,
     "-1": greenCircle,
     null: "",
 };
+const columns = [
+    [0,7,14,21,28,35], [1,8,15,22,29,36], [2,9,16,23,30,37],
+    [3,10,17,24,31,38], [4,11,18,25,32,39], [5,12,19,26,33,40], [6,13,20,27,34,41],
+];
 
 const winningCombos = [
     // horizontal
@@ -35,13 +39,13 @@ const winningCombos = [
 let board, turn, winner;
 
 /*----- cached element references -----*/
-const spaceEls = document.querySelectorAll('td');
-const imgEl = document.querySelector('img');
-const winnerEl = document.querySelector('h2');
+const spaceEls = document.querySelectorAll("td");
+const imgEl = document.querySelector("img");
+const winnerEl = document.querySelector("h2");
 
 /*----- event listeners -----*/
-document.querySelector('table').addEventListener('click', handleMove);
-document.querySelector('button').addEventListener('click', init);
+document.querySelector("table").addEventListener("click", handleMove);
+document.querySelector("button").addEventListener("click", init);
 
 /*----- functions -----*/
 init();
@@ -54,13 +58,13 @@ function init() {
     turn = 1;
     winner = null;
     render();
-}
+};
 
 function render() {
     board.forEach(function(sq, idx) {
-        spaceEls[idx].style.backgroundImage = `url(${lookup[sq]})`;
+        spaceEls[idx].style.backgroundImage = `url(${tokens[sq]})`;
     });
-    imgEl.src = lookup [turn];
+    imgEl.src = tokens [turn];
     if (winner === 1) {
         winnerEl.textContent = "Yellow Wins!"
     } else if (winner === -1) {
@@ -72,21 +76,33 @@ function render() {
     };
 };
 
+
 function handleMove(evt) {
     if (evt.target.tagName !== "TD") return;
-    const idx = parseInt(evt.target.id.replace('s', ''));
+    const idx = parseInt(evt.target.id.replace("s", ""));
+    let columnIdx = 0
+    columns.forEach(function(col, index) {
+        if (col.includes(idx)) {
+            columnIdx = index;
+        };
+    });
+    console.log(columnIdx);
     if (board[idx] || winner) return;
-    board[idx] = turn;
+    for (let i = 5; i >= 0; i--) {
+        if (board[columns[columnIdx][i]] === null) {
+            board[columns[columnIdx][i]] = turn;
+            break;
+        };
+        console.log(columns[columnIdx][i]);
+    };
+    console.log(board);
     turn *= -1;
     winner = getWinner();
     render();
-    console.log(board);
 };
 
 function getWinner() {
     for (let i = 0; i < winningCombos.length; i++) {
-        console.log(board[winningCombos[i][0]]);
-        console.log(Math.abs(null));
         if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]] + board[winningCombos[i][3]]) === 4) {
             return board[winningCombos[i][0]];
         };
