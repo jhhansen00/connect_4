@@ -1,6 +1,6 @@
 /*----- constants -----*/
 const yellowCircle = "https://i.dlpng.com/static/png/4064602-yellow-circle-transparent-background-logo-image-free-logo-png-yellow-circle-png-2000_1902_preview.webp"
-const greenCircle = "https://lh3.googleusercontent.com/proxy/XHr5m53dbY9tLCJv0tZFcN3C8XWWwdPXboA1FIFED06dEM-4Pt8ndBMpaf7E67fmW1yks9LCv7PMMZigbWK5x0AlkDzNlMU7xc0uXU_jJxSXkx4j"
+const greenCircle = "https://www.pngkey.com/png/full/417-4174990_how-to-set-use-small-green-dot-icon.png"
 const lookup = {
     "1": yellowCircle,
     "-1": greenCircle,
