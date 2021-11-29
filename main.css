@@ -25,6 +25,17 @@ td {
 button {
     padding: 10px;
     margin: 15px;
+    width: 100px;
+    border-radius: 10%;
+    box-shadow: 0 5px gray;
+}
+
+button:hover {background-color: lightgray; }
+
+button:active {
+    background-color: lightgray;
+    box-shadow: 0 2px gray;
+    transform: translateY(3px);
 }
 
 img {
@@ -37,4 +48,9 @@ img {
 span {
     font-size: 30px;
     font-weight: bolder;
+}
+
+h2 {
+    color: red;
+    font-size: xx-large;
 }
