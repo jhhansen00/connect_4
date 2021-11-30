@@ -1,7 +1,7 @@
 # Connect 4
 Be the first to play 4 tokens in a row, vertically, or horizontally
 
-![screenshot](https://i.imgur.com/aC4lQMh.png)
+![screenshot](https://i.imgur.com/NEEMq6w.png)
 
 ## Technologies Used: HTML, CSS, JS
 
