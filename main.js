@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const yellowCircle = "https://i.dlpng.com/static/png/4064602-yellow-circle-transparent-background-logo-image-free-logo-png-yellow-circle-png-2000_1902_preview.webp"
+const yellowCircle = "https://logodix.com/logo/66022.png"
 const greenCircle = "https://www.pngkey.com/png/full/417-4174990_how-to-set-use-small-green-dot-icon.png"
 const tokens = {
     "1": yellowCircle,

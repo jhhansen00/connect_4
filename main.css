@@ -54,3 +54,11 @@ h2 {
     color: red;
     font-size: xx-large;
 }
+
+td:hover {
+    background-color: lightgray;
+}
+
+header {
+    font-size: x-large;
+}
